@@ -1,0 +1,27 @@
+body {
+    box-sizing: border-box;
+}
+
+.drawPile {
+    border: 2px solid black;
+    margin: auto 33%;
+    padding: 1rem;
+    text-align: center;
+}
+
+.prevCard {
+    border: 2px solid black;
+}
+
+.currentCard {
+    border: 2px solid black;
+}
+
+.faceCardsContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.faceCardsContainer *{
+    margin: 1rem;
+}
