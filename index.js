@@ -23,21 +23,18 @@ async function getDeck() {
     console.log(`Call to doSomething took ${endTime - startTime} milliseconds`);
     drawCard();
 }
-getDeck(); //Gets deck and draws first card
+getDeck(); 
+drawCard();
 
+//Gets deck and draws first card
 //Card Draw Functions
 function setPrevCardToCurrentCard() {
     prevCardImg.setAttribute("src", currentCardImg.getAttribute("src"));
 }
 
-function drawCard() {
-    if (currentCardImg.getAttribute("src") != null) {setPrevCardToCurrentCard();}
-    setTimeout(async () => {
-        let res = fetch(`https://deckofcardsapi.com/api/deck/${deck.deck_id}/draw/?count=1`)
-        let data = await (await res).json();
-        currentCardImg.setAttribute("src", `${data.cards[0].image}`);
-    }, 1000);
+async function drawCard() {
+    if (currentCardImg.getAttribute("src") !== null) setPrevCardToCurrentCard()
+    let res = await fetch(`https://deckofcardsapi.com/api/deck/${deck.deck_id}/draw/?count=1`);
+    let data = await res.json();
+    currentCardImg.setAttribute("src", `${data.cards[0].image}`);
 }
-
-
-
