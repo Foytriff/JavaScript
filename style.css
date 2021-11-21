@@ -2,7 +2,7 @@ body {
     box-sizing: border-box;
 }
 
-.drawPile {
+.score {
     border: 2px solid black;
     margin: auto 33%;
     padding: 1rem;
@@ -10,16 +10,29 @@ body {
 }
 
 .prevCard {
+    display: flex;
+    flex-direction: column;
+    position: relative;
     border: 2px solid black;
+    text-align: center;
+    padding: .5rem;
+    transform: scale(.5);
+    flex-shrink: 1;
 }
 
 .currentCard {
+    display: flex;
+    flex-direction: column;
     border: 2px solid black;
+    text-align: center;
+    padding: .5rem;
 }
 
 .faceCardsContainer {
     display: flex;
     justify-content: center;
+    position: relative;
+    margin-right: 20%;
 }
 
 .faceCardsContainer *{
